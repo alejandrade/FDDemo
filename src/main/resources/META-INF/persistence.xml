@@ -7,7 +7,7 @@
         <persistence-unit name="cassandra_pu">
 		<provider>com.impetus.kundera.KunderaPersistence</provider>
 		<properties>
-			<property name="kundera.nodes" value="34.193.232.132" />
+			<property name="kundera.nodes" value="{server ip}" />
 			<property name="kundera.port" value="9160" />
 			<property name="kundera.keyspace" value="fddemo" />
 			<property name="kundera.dialect" value="cassandra" />
