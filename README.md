@@ -3,6 +3,8 @@
 
 
 This is a simple application designed to demo, Kundera, jwt, and jersey.
+
+
 [Cassandra db script](https://github.com/alejandrade/FDDemo/blob/master/cassandra.cql)
 
 
