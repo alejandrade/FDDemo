@@ -1,0 +1,60 @@
+CREATE KEYSPACE fddemo WITH REPLICATION = { 'class' : 'org.apache.cassandra.locator.SimpleStrategy', 'replication_factor': '3' } AND DURABLE_WRITES = true;
+
+CREATE TABLE fddemo.icecream (
+    intoken text,
+    flavor text,
+    name text,
+    PRIMARY KEY (intoken)
+) WITH COMPACT STORAGE
+   AND read_repair_chance = 0.0
+   AND dclocal_read_repair_chance = 0.1
+   AND gc_grace_seconds = 864000
+   AND bloom_filter_fp_chance = 0.01
+   AND caching = { 'keys' : 'ALL', 'rows_per_partition' : 'NONE' }
+   AND comment = ''
+   AND compaction = { 'class' : 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold' : 32, 'min_threshold' : 4 }
+   AND compression = { 'chunk_length_in_kb' : 64, 'class' : 'org.apache.cassandra.io.compress.LZ4Compressor' }
+   AND default_time_to_live = 0
+   AND speculative_retry = '99PERCENTILE'
+   AND min_index_interval = 128
+   AND max_index_interval = 2048
+   AND crc_check_chance = 1.0;
+
+CREATE TABLE fddemo.access (
+    intoken text,
+    passcode text,
+    PRIMARY KEY (intoken)
+) WITH COMPACT STORAGE
+   AND read_repair_chance = 0.0
+   AND dclocal_read_repair_chance = 0.1
+   AND gc_grace_seconds = 864000
+   AND bloom_filter_fp_chance = 0.01
+   AND caching = { 'keys' : 'ALL', 'rows_per_partition' : 'NONE' }
+   AND comment = ''
+   AND compaction = { 'class' : 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold' : 32, 'min_threshold' : 4 }
+   AND compression = { 'chunk_length_in_kb' : 64, 'class' : 'org.apache.cassandra.io.compress.LZ4Compressor' }
+   AND default_time_to_live = 0
+   AND speculative_retry = '99PERCENTILE'
+   AND min_index_interval = 128
+   AND max_index_interval = 2048
+   AND crc_check_chance = 1.0;
+
+CREATE TABLE fddemo.jwtkey (
+    jwt text,
+    banned int,
+    intoken text,
+    PRIMARY KEY (jwt)
+) WITH COMPACT STORAGE
+   AND read_repair_chance = 0.0
+   AND dclocal_read_repair_chance = 0.1
+   AND gc_grace_seconds = 864000
+   AND bloom_filter_fp_chance = 0.01
+   AND caching = { 'keys' : 'ALL', 'rows_per_partition' : 'NONE' }
+   AND comment = ''
+   AND compaction = { 'class' : 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold' : 32, 'min_threshold' : 4 }
+   AND compression = { 'chunk_length_in_kb' : 64, 'class' : 'org.apache.cassandra.io.compress.LZ4Compressor' }
+   AND default_time_to_live = 0
+   AND speculative_retry = '99PERCENTILE'
+   AND min_index_interval = 128
+   AND max_index_interval = 2048
+   AND crc_check_chance = 1.0;
