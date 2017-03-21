@@ -1,6 +1,8 @@
 **Welcome to FDDemo**
 ===================
 
+**THE URL DOES NOT WORK ANYMORE**
+
 
 This is a simple application designed to demo, Kundera, jwt, and jersey.
 
